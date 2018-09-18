@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+
+    <title>Menu test</title>
+</head>
+<body>
+<nav>
+    <div class="row">
+        <div class="col-3">
+            <a class="backBtn" href="/">
+                <li class="">< <br/>Terug</li>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-12">
+        <div class="wizard">
+            <li class="wizardOption">1</li>
+            <li class="wizardOption">2</li>
+            <li class="wizardOption active">3</li>
+            <li class="wizardOption">4</li>
+            <li class="wizardOption">5</li>
+        </div>
+    </div>
+    <div class="col-12"><h1 class="title">3. Welke filters wilt u van toepassing laten zijn op het overzicht?</h1></div>
+</div>
+
+<div class="filterContainer row">
+    <div class="filter-field col-2">
+        <button id="filterBtn" class="addFilter"><span class="size3">+</span> <br/> Filter toevoegen</button>
+    </div>
+    <div class="filter-field middle col-6">
+        <span class="filterTitle">Huidig geselecteerde filters</span>
+        <div id="filterSelected" class="filterSelected">
+            <div class="row filteroption-start">
+                <div class="col-12">Geen filters geselecteerd.</div>
+            </div>
+        </div>
+    </div>
+    <div class="filter-field col-3">
+        <div class="filterPossibilities">
+            <span class="filterTitle">
+                Aantal mogelijkheden na toepassen filters
+            </span>
+            <span id="percentage" class="percentage">80%</span>
+            <span class="undertitlePossible">Hierdoor zijn 230 mogelijkheden over.</span>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="nextbutton">Volgende<br/>stap</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="filterPopup" class="popup closed">
+    <div class="stick-top">
+        <div class="row">
+            <div class="col-12">
+                <h2>Filters selecteren</h2>
+                <span id="escape" class="escape">X</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="menuChoice">
+                    <h3>Alle opties of een selectie van opties?</h3>
+                    <form class="checkboxSelect">
+                        <div class="row col-8 offset-2">
+                            <div class="col-6">
+                                <input id="mostUsed" name="filtertype" type="radio" checked>
+                                <label for="mostUsed">Veelgebruikte filters</label>
+                            </div>
+                            <div class="col-6">
+                                <input id="all" name="filtertype" type="radio">
+                                <label for="all">Alle filters</label>
+                            </div>
+                        </div>
+                    </form>
+                    <span class="undertitleSelection col-12">
+                    De optie 'veelgebruikte filers' helpt u om minder vaak gebruikte opties weg te filteren zodat uw filterlijst overzichtelijker is. Staat uw gewenste filter er niet bij, selecteer dan alle filters.
+                </span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-12">
+                    <span class="fat">Filter zoeken</span>
+                    <input type="text" disabled /><span> &#128270;</span>
+                    <span class="notice">Deze functionaliteit wordt nog niet ondersteund.</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scrollpopup">
+        <div class="row">
+            <div class="col-12">
+                <div id="filterList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="static-foot-popup">
+        <button id="applyFilter" class="applyfilter">Filters updaten</button>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
