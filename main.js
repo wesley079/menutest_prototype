@@ -23,7 +23,7 @@ var mostUsedFilters =
                     "Cijfer: 10 - uitstekend"
                 ]
             },
-            "Locatie & locatiegegevens":
+            "Locatie en locatiegegevens":
                 {
                     "Deurbewegingen": {
                         "Deurbewegingen totaal": ["1"],
@@ -34,7 +34,32 @@ var mostUsedFilters =
                 },
             "Operatie eigenschappen": {
                 "Binnen/buiten bedrijfstijd": ["Ja", "Nee"],
-                "Case admit status": ["Ingevuld", "Niet ingevuld"]
+                "Case admit status": ["Ingevuld", "Niet ingevuld"],
+                "Implantaat": ["Ja", "Nee"],
+                "POWI": ["Onbekend"],
+                "Specialisme": ["Onbekend", "Algemene chirurgie", "Cardio- Thorcale chirguei", "Keel-neus-oor", "Neuro chirurgie", "Anders"],
+                "Time-out status": ["Niet ingevuld", "Wel ingevuld"],
+                "Urgentie niveau": ["Acuut <30 minuten", "Spoed < 5 uur", "Spoed < 24 uur", "Electief", "Onbekend"],
+                "Verrichtingen": ["Onbekend", "A. carotis desobstructie", "Cerebri contusio", "Debulking operatie", "Enkel fractuur weber B", "Fistula ani", "Anders"],
+            },
+            "Personen": {
+                "Anesthesioloog": [],
+                "OK personeel": [],
+                "Operateurs": [],
+                "Patient": {
+                    "Temperatuur patiënt (3)": {
+                        "Temperatuur holding": ["< 35.4c", "35.5c - 37.5c", ">37.6c"],
+                        "Temperatuur na Operatie": ["< 35.4c", "35.5c - 37.5c", ">37.6c"],
+                        "Temperatuurverschil": ["< 35.4c", "35.5c - 37.5c", ">37.6c"]
+                    }
+                }
+            },
+            "Protocol gehaald/niet gehaald": {
+                "Antibiotica protocol": ["Gehaald", "Niet gehaald"],
+                "Deurbewegingen protocol": ["Gehaald", "Niet gehaald"],
+                "Normothermie protocol": ["Gehaald", "Niet gehaald"],
+                "Ontharen protocol": ["Gehaald", "Niet gehaald"],
+                "POWI-bundel protocol": ["Gehaald", "Niet gehaald"],
             }
         }
     ];
@@ -43,15 +68,15 @@ var AllFilters =
     [
         {
             "Antibiotica gegevens": {
-                "1.Veel gebruikt": {
+                "Veel gebruikt (3)": {
                     "AB gegeven": ["Ja", "Nee"],
                     "AB proxylaxe": ["Nee, geen indicatie", "Onbekend", "Wel geidiceerd"],
                     "AB Tijd": ["Te vroeg (>59m59s vóór incisie/bloedleegte)", "Op tijd (tussen 15m00s - 59m59s vóór incisie/bloedleegte)", " Te laat (<14m59s vóór incisie/bloedleegte)", "Geen AB toegediend", "Geen AB rond incisie", "Na incisie"]
                 },
-                "1.Overig": {}
+                "Overig (0)": {}
             },
             "Compliancecijfer": {
-                "2.Veel gebruikt": {
+                "Veel gebruikt (2)": {
                     "Cijfer voldoende": ["onvoldoende", "voldoende"],
                     "Cijfer": [
                         "Onbekend",
@@ -68,30 +93,73 @@ var AllFilters =
                         "Cijfer: 10 - uitstekend"
                     ]
                 },
-                "2.Overig": {}
+                "Overig (0)": {}
             },
-            "Locatie & locatiegegevens":
+            "Locatie en locatiegegevens":
                 {
-                    "3. Veel gebruikt": {
-                        "Deurbewegingen": {
+                    "Veel gebruikt (2)": {
+                        "Deurbewegingen (2)": {
                             "Deurbewegingen totaal": ["1"],
                             "Deurbewegingen per uur": ["1"],
                         },
-                        "Operatiekamer": ["kamer1", "kamer2", "kamer3"]
+                        "Operatiekamer": ["kamer1", "kamer2", "kamer3"],
 
                     },
-                    "3. Overig": {
+                    "Overig (3)": {
+                        "Kamer type": ["Algemene OK", "Algemene OK (laser)", "Hybride OK", "Thorax OK"],
+                        "Luchtdruk binnen norm": ["Niet gemeten", "0% t/m 10%", "11% t/m 20%", "21% t/m 30%", "31% t/m 40%", "31% t/m 40%", "41% t/m 50%", "51% t/m 60%", "61% t/m 70%", "71% t/m 80%", "81% t/m 90%", "91% t/m 100%"],
+                        "Poliklinische OK": ["Klinisch", "Poliklinisch", "Niet bekend"]
 
                     }
                 },
             "Operatie eigenschappen": {
-                "4. Veel gebruikt": {
+                "Veel gebruikt (8)": {
                     "Binnen/buiten bedrijfstijd": ["Ja", "Nee"],
-                    "Case admit status": ["Ingevuld", "Niet ingevuld"]
-                },
-                "4. overig": {
+                    "Case admit status": ["Ingevuld", "Niet ingevuld"],
+                    "Implantaat": ["Ja", "Nee"],
+                    "POWI": ["Onbekend"],
+                    "Specialisme": ["Onbekend", "Algemene chirurgie", "Cardio- Thorcale chirguei", "Keel-neus-oor", "Neuro chirurgie", "Anders"],
+                    "Time-out status": ["Niet ingevuld", "Wel ingevuld"],
+                    "Urgentie niveau": ["Acuut <30 minuten", "Spoed < 5 uur", "Spoed < 24 uur", "Electief", "Onbekend"],
+                    "Verrichtingen": ["Onbekend", "A. carotis desobstructie", "Cerebri contusio", "Debulking operatie", "Enkel fractuur weber B", "Fistula ani", "Anders"],
 
+                },
+                "Overig (2)": {
+                    "Anestesietechniek": ["Onbekend", "Algehele anesthesie", "Algehele anesthesie + loco-regionaal", "Loco-regionaal + sedatie", "Loco-regionaal", "Sedatie"],
+                    "ASA Score": ["Niet bekend", 1, 2, 3, 4],
+                    "Tijdsduur": ["Korter dan 1 uur", "Langer dan 1 uur, Korter dan 2 uur", "Langer dan 2 uur, korter dan 3 uur", "Langer dan 3 uur, korter dan 4 uur", "Langer dan 4 uur"]
                 }
+            },
+            "Personen": {
+                "Veel gebruikt (4)": {
+                    "Anesthesioloog": [],
+                    "OK personeel": [],
+                    "Operateurs": [],
+                    "Patient": {
+                        "Veel gebruikt (1)": {
+                            "Temperatuur patiënt (3)": {
+                                "Temperatuur holding": ["< 35.4c", "35.5c - 37.5c", ">37.6c"],
+                                "Temperatuur na Operatie": ["< 35.4c", "35.5c - 37.5c", ">37.6c"],
+                                "Temperatuurverschil": ["< 35.4c", "35.5c - 37.5c", ">37.6c"]
+                            }
+                        },
+                        "Overige (2)": {
+                            "Leeftijd patiënt": [35, 36, 37, 38, 50],
+                            "Geslacht patiënt": ["Man", "Vrouw"]
+                        },
+                    }
+                },
+                "Overige (0)": {}
+            },
+            "Protocol gehaald/niet gehaald": {
+                "Veel gebruikt (5)": {
+                    "Antibiotica protocol": ["Gehaald", "Niet gehaald"],
+                    "Deurbewegingen protocol": ["Gehaald", "Niet gehaald"],
+                    "Normothermie protocol": ["Gehaald", "Niet gehaald"],
+                    "Ontharen protocol": ["Gehaald", "Niet gehaald"],
+                    "POWI-bundel protocol": ["Gehaald", "Niet gehaald"],
+                },
+                "Overige (0)": {}
             }
         }
     ];
@@ -141,7 +209,7 @@ $(close).on("click", function () {
     $(popup).fadeOut(500);
 });
 
-$('input[type=radio][name=filtertype]').change(function() {
+$('input[type=radio][name=filtertype]').change(function () {
     console.log(this.id);
     if (this.id === 'mostUsed') {
         currentSelection = true;
@@ -240,15 +308,30 @@ function applyFilterinList() {
 
 function OpenedFilterList(title, data) {
     var trimmedtitle = removeWhitespace(title);
-    var returnDiv = '<div id="' + trimmedtitle + '" class="' + trimmedtitle + '-filtertitle object-items closed' + '">';
+    var closedOrOpen = 'closed';
+    var returnDiv = "";
+    if(trimmedtitle.includes("Veelgebruikt") || trimmedtitle.includes("Overig")){
+        returnDiv = '<div id="' + trimmedtitle + '" class="' + trimmedtitle + '-filtertitle object-items extra-all open">';
+    }
+    else{
+        returnDiv = '<div id="' + trimmedtitle + '" class="' + trimmedtitle + '-filtertitle object-items closed">';
+    }
+
 
     $.each(data, function (title2, data2) {
         var uniqueID = Math.random().toString(36).substr(2, 9);
         var possib = "";
-        if(data2.length !== undefined){
-           possib = ' <span class="small">(' + data2.length + ')</span>';
+        if (data2.length !== undefined) {
+            possib = ' <span class="small">(' + data2.length + ')</span>';
         }
-        returnDiv += '<div class="option-header">' + '<span class="opener-big opener" data-unique="'+ uniqueID + '" data-openTitle="' + removeWhitespace(title2) + '">+</span>' + title2 + possib + "</div>";
+
+        if(removeWhitespace((title2)).includes("Veelgebruikt") || (removeWhitespace((title2))).includes("Overig")) {
+            returnDiv += '<div class="option-header-advice">' + title2 + possib + "</div>";
+        }
+        else {
+            returnDiv += '<div class="option-header">' + '<span class="opener-big opener" data-unique="' + uniqueID + '" data-openTitle="' + removeWhitespace(title2) + '">+</span>' + title2 + possib + "</div>";
+        }
+
         if (Array.isArray(data2)) {
             returnDiv += optionPossibilities(title2, data2, uniqueID);
         }
@@ -264,7 +347,7 @@ function OpenedFilterList(title, data) {
 
 function optionPossibilities(title2, data2, dataunique) {
     var trimmedtitle = removeWhitespace(title2);
-    var returnDiv = '<div data-id="'+ dataunique +'" id="' + trimmedtitle + '" class="' + trimmedtitle + '-optiontitle array-items closed' + '">';
+    var returnDiv = '<div data-id="' + dataunique + '" id="' + trimmedtitle + '" class="' + trimmedtitle + '-optiontitle array-items closed' + '">';
     returnDiv += '<div><span class="selectall" data-id="' + dataunique + '">(De)selecteer alles in deze categorie</span></div>';
     $.each(data2, function (title3, data3) {
         returnDiv += '<div class="option">' + '<input data-unique="' + Math.random().toString(36).substr(2, 9) + '" data-head="' + title2 + '" id="' + data3 + '" type="checkbox"/> <label for="' + data3 + '">' + data3 + "</label></div>";
