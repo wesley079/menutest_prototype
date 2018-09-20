@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+
+    <title>Menu test</title>
+</head>
+<body>
+<nav>
+    <div class="row">
+        <div class="col-3">
+            <a class="backBtn" href="/">
+                <li class="">< <br/>Terug</li>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-12">
+        <div class="wizard">
+            <li class="wizardOption active">1</li>
+            <li class="wizardOption">2</li>
+            <li class="wizardOption">3</li>
+            <li class="wizardOption">4</li>
+            <li class="wizardOption">5</li>
+        </div>
+    </div>
+    <div class="col-12"><h1 class="title">1. Selecteer het type analyse</h1></div>
+</div>
+
+<div class="filterContainer">
+    <div class="row col-12">
+        <div class="col-3 analyse-option">
+            <div class="inner">
+                <span class="blocktitle">Aantal operaties</span>
+                <span class="descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dicta
+                    dolorem doloribus ea error, eveniet, explicabo incidunt iure magnam maxime molestiae porro quae
+                    quia sint soluta vero, voluptatem!
+                </span>
+            </div>
+        </div>
+        <div class="col-3 analyse-option">
+            <div class="inner">
+                <span class="blocktitle">Compliancecijfer</span>
+                <span class="descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dicta
+                    dolorem doloribus ea error, eveniet, explicabo incidunt iure magnam maxime molestiae porro quae
+                    quia sint soluta vero, voluptatem!
+                </span>
+            </div>
+        </div>
+        <div class="col-3 analyse-option">
+            <div class="inner">
+                <span class="blocktitle">Deurbewegingen</span>
+                <span class="descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dicta
+                    dolorem doloribus ea error, eveniet, explicabo incidunt iure magnam maxime molestiae porro quae
+                    quia sint soluta vero, voluptatem!
+                </span>
+            </div>
+        </div>
+        <div class="col-3 analyse-option">
+            <div class="inner">
+                <span class="blocktitle">Personeel</span>
+                <span class="descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dicta
+                    dolorem doloribus ea error, eveniet, explicabo incidunt iure magnam maxime molestiae porro quae
+                    quia sint soluta vero, voluptatem!
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row col-6 offset-3">
+        <div class="col-6 analyse-option">
+            <div class="inner">
+                <span class="blocktitle">Tijdsduur</span>
+                <span class="descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dicta
+                    dolorem doloribus ea error, eveniet, explicabo incidunt iure magnam maxime molestiae porro quae
+                    quia sint soluta vero, voluptatem!
+                </span>
+            </div>
+        </div>
+        <div class="col-6 analyse-option">
+            <div class="inner">
+                <span class="blocktitle">Wisseltijden</span>
+                <span class="descrip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi dicta
+                    dolorem doloribus ea error, eveniet, explicabo incidunt iure magnam maxime molestiae porro quae
+                    quia sint soluta vero, voluptatem!
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="filterPopup" class="popup closed">
+    <div class="stick-top">
+        <div class="row">
+            <div class="col-12">
+                <h2>Filters selecteren</h2>
+                <span id="escape" class="escape">X</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="menuChoice">
+                    <h3>Alle opties of een selectie van opties?</h3>
+                    <form class="checkboxSelect">
+                        <div class="row col-8 offset-2">
+                            <div class="col-6">
+                                <input id="mostUsed" name="filtertype" type="radio" checked>
+                                <label for="mostUsed">Veelgebruikte filters</label>
+                            </div>
+                            <div class="col-6">
+                                <input id="all" name="filtertype" type="radio">
+                                <label for="all">Alle filters</label>
+                            </div>
+                        </div>
+                    </form>
+                    <span class="undertitleSelection col-12">
+                    De optie 'veelgebruikte filers' helpt u om minder vaak gebruikte opties weg te filteren zodat uw filterlijst overzichtelijker is. Staat uw gewenste filter er niet bij, selecteer dan alle filters.
+                </span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="col-12">
+                    <span class="fat">Filter zoeken</span>
+                    <input type="text" disabled/><span> &#128270;</span>
+                    <span class="notice">Deze functionaliteit wordt nog niet ondersteund.</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scrollpopup">
+        <div class="row">
+            <div class="col-12">
+                <div id="filterList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="static-foot-popup">
+        <button id="applyFilter" class="applyfilter">Filters updaten</button>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

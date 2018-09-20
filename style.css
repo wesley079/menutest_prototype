@@ -209,6 +209,35 @@ h3{
     display: block;
     padding: 0 20px 5px;
 }
+.analyse-option{
+    height: 220px;
+    margin: 15px auto;
+    padding: 10px;
+}
+.inner{
+    margin: 20px;
+    border: 1px solid #438EB9;
+    height: 100%;
+    padding: 15px;
+}
+.blocktitle{
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    background: #f8faff;
+    border: 1px solid #dae2ea;
+    color: #7c9eb2;
+    font-size: 1.2em;
+}
+.descrip{
+    font-size: 0.8em;
+    margin-top: 10px;
+    display: block;
+}
+.inner:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+}
 .fat{
     font-weight: bold;
     font-size: 1.2em;
